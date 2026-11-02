@@ -1,0 +1,41 @@
+# Configuration locale : ne jamais versionner les secrets.
+.env
+.env.*
+!.env.example
+
+# Dependances et caches generes localement.
+/vendor/
+/node_modules/
+/.phpunit.result.cache
+
+# Journaux et donnees temporaires d'execution.
+*.log
+error_log
+/storage/
+/uploads/
+*.tmp
+*.temp
+*.swp
+*~
+
+# Logos envoyes par les utilisateurs (les drapeaux statiques restent suivis).
+/photos/drapeau_*
+
+# Sauvegardes ou exports de bases locales. Les schemas et migrations SQL restent suivis.
+/database/backups/
+/database/dumps/
+*.sql.gz
+*.dump
+*.bak
+*.backup
+*.sqlite*
+
+# Fichiers propres au poste de travail.
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Document de travail hors application.
+/Fiche1_3_RGPD.pdf
