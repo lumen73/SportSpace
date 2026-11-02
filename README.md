@@ -86,18 +86,6 @@ Dans [gestioncomptes.php](./gestioncomptes.php), un administrateur peut changer 
 
 Les définitions et migrations de la base sont conservées dans `database/`. Les images de drapeaux fournies avec le projet sont dans `photos/` ; les nouveaux téléversements y sont enregistrés sous le nom `drapeau_*` et ne sont pas suivis par Git. En production, sauvegarde et déploie les images téléversées avec la base, car les lignes des équipes les référencent.
 
-## Fichiers à ne pas publier sur GitHub
-
-Le fichier `.gitignore` exclut déjà les catégories suivantes :
-
-- `.env` et les autres fichiers `.env.*`, qui peuvent contenir les identifiants de la base et des paramètres privés. `.env.example` reste publiable car il ne contient que des valeurs factices.
-- Les journaux (`*.log`, `error_log`), caches, fichiers temporaires et dossiers de dépendances générés localement (`vendor/`, `node_modules/`).
-- Les images téléversées (`photos/drapeau_*`), ainsi que les éventuels fichiers et dossiers de sauvegarde/export de base (`database/backups/`, `database/dumps/`, `*.sql.gz`, `*.dump`, `*.bak`, `*.backup`, `*.sqlite*`).
-- Les fichiers propres à un poste de travail (`.idea/`, `.vscode/`, `.DS_Store`, `Thumbs.db`, `desktop.ini`).
-- `Fiche1_3_RGPD.pdf`, document présent dans le dossier mais non requis par l'application.
-
-Les fichiers `database/schema_*.sql` et `database/migrate_*.sql` ne sont pas des exports de données : ils décrivent la structure de la base et les migrations, et doivent rester dans le dépôt. Place tout export contenant des données dans `database/backups/` ou `database/dumps/` pour qu'il soit ignoré. Les drapeaux statiques de `photos/` sont également nécessaires. Si `.env` ou un autre fichier sensible a déjà été ajouté à Git, `.gitignore` ne le retire pas de l'historique : il faut le retirer de l'index et remplacer les secrets exposés.
-
 ## Structure du projet
 
 ```text
